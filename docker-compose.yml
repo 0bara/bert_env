@@ -1,0 +1,11 @@
+version: "2"
+services:
+  bert:
+    image: bert_env
+    build:
+        context: ./docker
+    volumes:
+      - ./model:/opt/model
+      - ./work:/opt/work
+    command:
+        /bin/sh bin/btest.sh bin/norm.env
